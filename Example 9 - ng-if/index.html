@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<script src="js/angular.min.js"></script>
+<body>
+
+	<div ng-app="">
+
+		<p>the input box:</p>
+		<p><input type="text" ng-model="fname" ></p>
+		<br><br>
+		You have entered: <span ng-if="fname">{{fname}}</span>
+		<span ng-if="!fname"> Enter name</span>
+	</div>
+
+</body>
+</html>

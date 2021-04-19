@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<script src="js/angular.min.js"></script>
+		<script src="js/custom.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="jsonCtrl">
+			<h1>Reading external Json file</h1>
+			<h2>Total Employees {{ message }}</h2>
+			<table class="table">
+				<tr ng-repeat="resource in employees">
+					<td>{{ resource.name }}</td>
+					<td>{{ resource.city }}</td>
+					<td>{{ resource.state }}</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+
+</html>

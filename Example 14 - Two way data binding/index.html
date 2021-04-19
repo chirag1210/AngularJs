@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="ht">
+	<script src="js/angular.min.js"></script>
+	<script src="js/custom.js"></script>
+
+	<body ng-controller="personCtrl">
+		Simple object
+		<input type="text" ng-model="name" />
+		<br /><br />
+		<button ng-click="showMsg()">Show Message</button>
+		<br /><br />
+		{{ name }}
+		<br /><br />
+		<br /><br />
+		<br /><br />
+
+		Complex object
+		<input type="text" ng-model="employee.fname" />
+		<br /><br />
+		<button ng-click="showMsg()">Show Message</button>
+		<br /><br />
+		{{ employee.fname }}
+	</body>
+
+</html>

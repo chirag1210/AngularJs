@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="ht">
+
+	<head>
+		<script src="js/angular.min.js"></script>
+		<script src="js/custom.js"></script>
+	</head>
+
+	<body ng-controller="personCtrl">
+		<input type="number" step="1" min="0" max="6" ng-model="rowlimit">
+		<br /><br /><br /><br />
+		<input type="text" placeholder="Search by employee" ng-model="filterText">
+		<br /><br /><br /><br />
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Date of Birth</th>
+					<th>Gender</th>
+					<th>Salary (number)</th>
+					<th>Salary (currency)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees | filter = filterText | limitTo:rowlimit | orderBy: 'salary' : false">
+					<td>{{ employee.firstName+" "+employee.lastName | uppercase }}</td>
+					<td>{{ employee.dateOfBirth | date:"dd/MM/yyyy" }}</td>
+					<td>{{ employee.gender | lowercase }}</td>
+					<td>{{ employee.salary | number:2 }}</td>
+					<td>{{ employee.salary | currency:"$" }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+
+</html>

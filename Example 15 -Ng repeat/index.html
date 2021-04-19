@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="ht">
+
+	<head>
+		<script src="js/angular.min.js"></script>
+		<script src="js/custom.js"></script>
+	</head>
+
+	<body ng-controller="personCtrl">
+		<div>
+			<ul>
+				<li ng-repeat="country in countries"> {{ country.countryName }}
+					<ul>
+						<li ng-repeat="city in country.cities"> {{ $index + 1+" "+city.cityName }}</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+
+</html>
